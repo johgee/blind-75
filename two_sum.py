@@ -1,0 +1,37 @@
+# from typing import List 
+
+# class Solution:
+#   def twoSum(self, nums: List[int], target: int) -> List[int]:
+#     mp = {} # hash table 
+#     for i, num in enumerate(nums):
+#       complement = target - num 
+#       if complement in mp:
+#         return [mp[complement],i]
+#       else: 
+#         mp[num]=i
+
+# def twoSum(self, nums: List[int], target: int) -> List[int]:
+#   hash_table = {}
+#   for i in range(len(nums)):
+#     if nums[i] in hash_table:
+#       return [hash_table[nums[i]], i]
+#     else: 
+#       hash_table[target - nums[i]] = i
+
+class Solution(object):
+  def twoSum(self, nums, target):
+   """
+   :type nums: List[int]
+   :type target: int 
+   :rtype: List[int]
+   """
+   required = {}
+   for i in range(len(nums)):
+    if target - nums[i] in required:
+      return [required[target - nums[i]],i]
+    else: 
+      required[nums[i]] =i
+
+input_list = [2,8,12,15]
+ob1 = Solution()
+print(ob1.twoSum(input_list, 20))
