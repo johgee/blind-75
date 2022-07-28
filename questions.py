@@ -44,3 +44,9 @@ class Solution:
 root = [4, 2, 7, 1, 3, 6, 9]
 ob1 = Solution()
 print(ob1.invertTree(root))
+
+
+# input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+# output: 6
+# explanation: the lca of nodes 2 and 8 is 6
+
