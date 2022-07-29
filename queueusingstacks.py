@@ -41,14 +41,14 @@ class MyQueue:
 input = ["MyQueue", "push", "push", "peek", "pop", "emepty"]
 input2 = [[], [1], [2], [], [], []]
 obj = MyQueue()
-obj.push(x)
-print(obj.pop(input, input2))
+# obj.push(x)
+# print(obj.pop(input, input2))
 
 # print(obj.__init__(input, input2))
-# print(obj.push(input, input2))
-# print(obj.pop(input, input2))
-# print(obj.peek(input, input2))
-# print(obj.empty(input, input2))
+print(obj.push(input, input2))
+print(obj.pop(input, input2))
+print(obj.peek(input, input2))
+print(obj.empty(input, input2))
 
 # Your MyQueue object will be instantiated and called as such:
 # obj = MyQueue()
