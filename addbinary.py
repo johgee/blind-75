@@ -23,28 +23,52 @@
 
 # linear algorithm
 
-class Solution:
-    def addBinary(self, a: str, b: str) -> str:
-        res = ""
-        carry = 0
+# class Solution: # this only works for the first one 
+#     def addBinary(self, a: str, b: str) -> str:
+#         res = ""
+#         carry = 0
 
-        a, b = a[::-1], b[::-1]
+#         a, b = a[::-1], b[::-1]
 
-        for i in range(max(len(a), len(b))):
-            digitA = ord(a[i]) - ord("0") if i < len(a) else 0
-            digitB = ord(b[i]) - ord("0") if i < len(b) else 0 
+#         for i in range(max(len(a), len(b))):
+#             digitA = ord(a[i]) - ord("0") if i < len(a) else 0
+#             digitB = ord(b[i]) - ord("0") if i < len(b) else 0 
 
-            total = digitA + digitB + carry 
-            char = total % 2 
+#             total = digitA + digitB + carry 
+#             char = total % 2 
 
-            total = 2
-            char = str(total % 2)
-            res = char + res 
-            carry = total // 2
+#             total = 2
+#             char = str(total % 2)
+#             res = char + res 
+#             carry = total // 2
         
-        if carry: 
-            res = "1" + res 
-        return res 
+#         if carry: 
+#             res = "1" + res 
+#         return 
+
+# a = "1010"
+# b = "1011"
+# ob1 = Solution()
+# print(ob1.addBinary(a, b))
+
+class Solution:
+    def addBinary(self, a, b):
+        carry = 0
+        result = ''
+
+        a = list(a)
+        b = list(b)
+
+        while a or b or carry:
+            if a:
+                carry += int(a.pop())
+            if b:
+                carry += int(b.pop())
+            
+            result += str(carry % 2)
+            carry //= 2
+
+        return result[::-1]
 
 a = "11"
 b = "1"
